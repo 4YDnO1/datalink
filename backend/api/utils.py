@@ -1,10 +1,15 @@
 from openai import OpenAI
 import json
 from duckduckgo_search import DDGS
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 client = OpenAI(
-    api_key="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"
+    api_key=OPENAI_API_KEY
 )
+
 
 def _get_pages(question: str) -> list:
     scoped_answer: list[dict] = []
@@ -29,7 +34,7 @@ def _from_one(question: str) -> object:
     return answer
 
 
-def get_pages(object: str):
+def get_pages(object: str) -> list:
     prompt_format = """Ответь в формате JSON: [{"id": <id>, "title": <title>}]"""
     prompt = f"Напиши 10 вопросов на тему {object}." + prompt_format
 

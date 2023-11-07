@@ -4,14 +4,17 @@ from rest_framework.response import Response
 import openai
 from rest_framework.decorators import api_view
 from .utils import get_pages 
+import os
+from dotenv import load_dotenv
 
-
-openai.api_key = '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'
+load_dotenv()
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+openai.api_key = OPENAI_API_KEY
 
 @api_view(['POST'])
 def get_post(request, MaxToken=50, outputs=3):
-    print(request.data)
-    text='Геология'
+    # print(request.data)
+    text='Биология'
     if request.method == 'POST':
         result = get_pages(text)
         return Response(result)
