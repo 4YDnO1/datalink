@@ -1,0 +1,60 @@
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+:root
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
+	font-size: 100%
+	color-scheme: light dark
+	color: rgba(255, 255, 255, 0.87)
+	background-color: #242424
+	font-synthesis: none
+	text-rendering: optimizeLegibility
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	-webkit-text-size-adjust: 100%
+html
+	overflow: hidden scroll
+	scroll-behavior: smooth
+	transition: none
+	scrollbar-width: thin
+	scrollbar-color: red
+
+#app
+	position: relative
+	display: flex
+	flex-direction: column
+	text-align: center
+	min-height: 100vh
+.content-wrapper
+	display: flex
+	flex-direction: column
+	align-items: center
+	width: 100%
+	background-color: #9d53f2
+.content-container
+	display: flex
+	flex-direction: column
+	align-items: center
+	width: 100%
+	max-width: 980px
+	padding: 0 15px
+	background-color: #181818
+.content
+	max-width: 100%
+.header-wrapper
+	@extend .content-wrapper
+	position: sticky
+	top: 0
+	z-index: 1
+	background-color: yellow
+.main-wrapper
+	@extend .content-wrapper
+	flex-grow: 1
+.section-wrapper
+	@extend .content-wrapper
+	color: lime
+	flex-grow: 1
+.footer-wrapper
+	@extend .content-wrapper
+	background-color: yellow
