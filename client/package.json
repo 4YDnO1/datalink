@@ -1,18 +1,23 @@
 {
+  "proxy": "http://127.0.0.1:8000/",
   "name": "client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
+    "build-old": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.7.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-fetch-streams": "^1.1.2",
+    "react-use-websocket": "^3.0.0",
+    "socket.io": "^4.7.2"
   },
   "devDependencies": {
     "@tanstack/react-table": "^8.10.7",

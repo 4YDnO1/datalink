@@ -5,9 +5,6 @@
 :root
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
 	font-size: 100%
-	color-scheme: light dark
-	color: rgba(255, 255, 255, 0.87)
-	background-color: #242424
 	font-synthesis: none
 	text-rendering: optimizeLegibility
 	-webkit-font-smoothing: antialiased
@@ -24,14 +21,14 @@ html
 	position: relative
 	display: flex
 	flex-direction: column
-	text-align: center
+	background-color:#272727
 	min-height: 100vh
 .content-wrapper
 	display: flex
 	flex-direction: column
 	align-items: center
 	width: 100%
-	background-color: #9d53f2
+
 .content-container
 	display: flex
 	flex-direction: column
@@ -39,22 +36,23 @@ html
 	width: 100%
 	max-width: 980px
 	padding: 0 15px
-	background-color: #181818
+	
 .content
 	max-width: 100%
 .header-wrapper
 	@extend .content-wrapper
+	backdrop-filter: blur(8px)
+	background-color: rgba(28, 28, 28, 0.8)
 	position: sticky
 	top: 0
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5)
 	z-index: 1
-	background-color: yellow
+
 .main-wrapper
 	@extend .content-wrapper
 	flex-grow: 1
 .section-wrapper
 	@extend .content-wrapper
-	color: lime
 	flex-grow: 1
 .footer-wrapper
 	@extend .content-wrapper
-	background-color: yellow
