@@ -1,3 +1,4 @@
+# Client
 FROM node:21-alpine3.17 as build
 ## 18.16.0-alpine
 
@@ -15,6 +16,7 @@ RUN npm ci --silent
 COPY ./client/ ./
 RUN npm run build
 
+# Nginx
 FROM nginx:stable-alpine
 COPY --from=build /app/frontend/dist /usr/share/nginx/html
 CMD ["nginx", "-g", "daemon off;"]

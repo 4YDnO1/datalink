@@ -75,8 +75,8 @@ export function Home() {
 				}
 
 				const decodedChunk = decoder.decode(value, { stream: true });
-
 				const JSONChunk = JSON.parse(decodedChunk);
+				console.log(JSONChunk);
 
 				generateContent(JSONChunk);
 				setAnswerList((prevList) => [...prevList, JSONChunk]);
@@ -109,7 +109,7 @@ export function Home() {
 
 								<div className=" mt-3 flex items-center">
 									<button
-										className='mr-2 px-3 py-2 rounded bg-[#0284c7] text-white text-black hover:bg-[#0ea5e9] transition-all' type="submit" onClick={(e) => onFormSubmit(e)}>
+										className='  px-3 py-2 rounded bg-[#0284c7] text-white text-black hover:bg-[#0ea5e9] transition-all' type="submit" onClick={(e) => onFormSubmit(e)}>
 										Определить
 									</button>
 									{ !answerList.length && isLoading && <img className='w-[40px]' src={loader} alt="loader" /> }
@@ -125,7 +125,13 @@ export function Home() {
 											{ !element.content && <img className='w-[25px]' src={loader} alt="loader" /> }
 											<label className="w-full text-sm font-medium text-gray-900 dark:text-gray-300">{element.question}</label>
 										</div>
-										<label className="font-normal">{element.content}</label>
+										<div className="flex gap-2 mb-2">
+											{element.pages.map(page =>
+												<a className="px-3 py-1
+												 bg-[#71717a] hover:bg-[#6b7280] whitespace-nowrap text-ellipsis overflow-hidden rounded-lg" href={page.link}>{page.title}</a>
+											)}
+										</div>
+										<label onClick={() => {navigator.clipboard.writeText(element.content)}} className="font-normal">{element.content}</label>
 									</li>
 								)}
 							</ul>

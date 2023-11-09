@@ -1,0 +1,11 @@
+
+# Backend
+FROM python:3.9-alpine
+WORKDIR /app/backend
+
+COPY ./backend/requirements.txt ./
+RUN pip install -r requirements.txt
+COPY ./backend /app/backend
+EXPOSE 5000
+
+CMD ["gunicorn", "-b", ":5000", "backend:main"]

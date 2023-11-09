@@ -4,11 +4,12 @@ from duckduckgo_search import DDGS
 from flask import jsonify
 import requests
 from bs4 import BeautifulSoup
-import os
-from dotenv import load_dotenv
+from os import getenv
 
+from dotenv import load_dotenv
 load_dotenv()
-OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
+
+OPENAI_API_KEY = getenv("KEY")
 client = OpenAI(
     api_key=OPENAI_API_KEY
 )
