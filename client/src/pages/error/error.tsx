@@ -1,6 +1,7 @@
 import "./error.sass";
 
 export default function Error() {
+	document.title = "Error 404 | Datalink";
 	return (
 		<>
 			<section className="section-wrapper">

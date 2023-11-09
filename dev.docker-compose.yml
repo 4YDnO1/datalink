@@ -36,9 +36,9 @@ services:
             # - ./backend/django_static:/app/backend/server/django_static
             # - ./backend/media:/app/backend/server/media
             - ./nginx/development:/etc/nginx/conf.d
-        depends_on:
+        # depends_on:
             # - react
-            - flask
+            # - flask
 
     # rmq:
     #     image: rabbitmq:3.10-management
